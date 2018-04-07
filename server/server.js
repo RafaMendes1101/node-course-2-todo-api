@@ -36,3 +36,5 @@ app.post('/user',(req,res) => {
 app.listen(process.env.PORT, process.env.IP, () => {
     console.log('Deu bom')
 });
+
+module.exports = {app};
