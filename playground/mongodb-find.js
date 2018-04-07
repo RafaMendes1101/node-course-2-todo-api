@@ -18,9 +18,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     
      const db = client.db('TodoApp')
     
+    //INSERE TODOS
+    
     //  db.collection('Todos').insertOne({
-    //      text: 'Walk the dog',
-    //      completed: true
+    //      text: 'Have a beer',
+    //      completed: false
     //  }, (err, result) => {
     //      if (err){
     //          return console.log('Erro porra', err);
@@ -29,21 +31,32 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //      console.log(JSON.stringify(result.ops, undefined, 2))
     //  });
     
-    // db.collection('Todos').find({
-    //     _id: new ObjectID('5ac893065f9e8b134f990821')
-    // }).toArray().then((docs) => {
-    //     console.log('Todos');
-    //     console.log(JSON.stringify(docs, undefined, 2));
-    // }, (err) =>{
-    //     console.log('deu ruim', err)
-    // });
-
-    db.collection('Todos').find().count().then((count) => {
-        console.log(`Todos count: ${count}`);
-        
+    // Acha todos
+    
+    db.collection('Todos').find().toArray().then((docs) => {
+        console.log('Todos');
+        console.log(JSON.stringify(docs, undefined, 2));
     }, (err) =>{
         console.log('deu ruim', err)
     });
+
+
+// conta todos
+
+db.collection('Todos').find().count().then((count) => {
+    console.log(`Todos count: ${count}`);
+}, (err) => {
+    console.log('deu ruim', err);
+});
+
+//USERS
+
+    // db.collection('Users').find().count().then((count) => {
+    //     console.log(`Todos count: ${count}`);
+        
+    // }, (err) =>{
+    //     console.log('deu ruim', err)
+    // });
     
     //client.close();
 });
