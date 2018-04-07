@@ -28,36 +28,35 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     console.log(JSON.stringify(result.ops, undefined, 2))
     // });
     
-    //  db.collection('Users').insertOne({
-    //     name: 'Lucas',
-    //     age: '30',
-    //     location: 'Leeds'
-    // }, (err, result) => {
-    //     if (err){
-    //         return console.log('Erro porra', err);
-    //     }
+     db.collection('Users').insertOne({
+        name: 'Rafael',
+        age: 31,
+        location: 'Leeds'
+    }, (err, result) => {
+        if (err){
+            return console.log('Erro porra', err);
+        }
         
-    //   console.log(result.ops[0]._id.getTimestamp());
-    //   console.log(JSON.stringify(result.ops, undefined, 2))
+      console.log(result.ops[0]._id.getTimestamp());
+      console.log(JSON.stringify(result.ops, undefined, 2))
+    });
+    
+    // var age = '41';
+    
+    // db.collection('Users').find({age: age}).count().then((count) => {
+    //     console.log(`Users count: ${count}`);
+      
+    // }, (err) =>{
+    //     console.log('deu ruim', err)
     // });
     
-    var age = '41';
-    
-    db.collection('Users').find({age: age}).count().then((count) => {
-        console.log(`Users count: ${count}`);
+    // db.collection('Users').find({age: age}).toArray().then((docs) => {
+    //     console.log('Users');
+    //     console.log(JSON.stringify(docs, undefined,2));
       
-    }, (err) =>{
-        console.log('deu ruim', err)
-    });
-    
-    db.collection('Users').find({age: age}).toArray().then((docs) => {
-        console.log('Users');
-        console.log(JSON.stringify(docs, undefined,2));
-      
-    }, (err) =>{
-        console.log('deu ruim', err)
-    });
+    // }, (err) =>{
+    //     console.log('deu ruim', err)
+    // });
     
    // client.close();
 });
-

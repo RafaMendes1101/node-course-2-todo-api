@@ -20,17 +20,17 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     // })
     
     //findOne And Delete
-     db.collection('Todos').findOneAndDelete({text: 'Something to do'}).then((result) => {
-         console.log(result);
+    //  db.collection('Todos').findOneAndDelete({text: 'Something to do'}).then((result) => {
+    //      console.log(result);
          
-     });
+    //  });
      
-     db.collection('Todos').find().toArray().then((docs) => {
-        console.log('Todos');
-        console.log(JSON.stringify(docs, undefined, 2));
-    }, (err) =>{
-        console.log('deu ruim', err)
-    });
+    //  db.collection('Todos').find().toArray().then((docs) => {
+    //     console.log('Todos');
+    //     console.log(JSON.stringify(docs, undefined, 2));
+    // }, (err) =>{
+    //     console.log('deu ruim', err)
+    // });
 
     //client.close();
 });
