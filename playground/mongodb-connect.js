@@ -49,6 +49,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     }, (err) =>{
         console.log('deu ruim', err)
     });
+    // FIND TODOS
+    
+    db.collection('Todos').find().toArray().then((docs) => {
+        console.log('Todos');
+        console.log(JSON.stringify(docs, undefined,2));
+      
+    }, (err) =>{
+        console.log('deu ruim', err)
+    });
+    
     
     //  db.collection('Users').insertOne({
     //     name: 'Rafael',
@@ -72,7 +82,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     console.log('deu ruim', err)
     // });
     
-    // db.collection('Users').find({age: age}).toArray().then((docs) => {
+    // db.collection('Users').find().toArray().then((docs) => {
     //     console.log('Users');
     //     console.log(JSON.stringify(docs, undefined,2));
       
