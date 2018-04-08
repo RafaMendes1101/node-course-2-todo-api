@@ -28,18 +28,40 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     console.log(JSON.stringify(result.ops, undefined, 2))
     // });
     
-     db.collection('Users').insertOne({
-        name: 'Rafael',
-        age: 31,
-        location: 'Leeds'
-    }, (err, result) => {
-        if (err){
-            return console.log('Erro porra', err);
-        }
-        
-      console.log(result.ops[0]._id.getTimestamp());
-      console.log(JSON.stringify(result.ops, undefined, 2))
+    // db.collection('Todos').insertOne({
+    //     text: 'Jogar LOL',
+    //     completed: true
+    // }, (err, result) => {
+    //     if (err){
+    //         return console.log('Nao deu', err)
+    //     }
+    //     console.log(JSON.stringify(result.ops, undefined,2))
+    // });
+    
+    // //delete one
+    // db.collection('Todos').deleteOne({text: 'Fazer uma session'}).then((result) => {
+    //     console.log(result);
+    // })
+    
+    db.collection('Todos').find().count().then((count) => {
+        console.log(`Todos count: ${count}`);
+      
+    }, (err) =>{
+        console.log('deu ruim', err)
     });
+    
+    //  db.collection('Users').insertOne({
+    //     name: 'Rafael',
+    //     age: 31,
+    //     location: 'Leeds'
+    // }, (err, result) => {
+    //     if (err){
+    //         return console.log('Erro porra', err);
+    //     }
+        
+    //   console.log(result.ops[0]._id.getTimestamp());
+    //   console.log(JSON.stringify(result.ops, undefined, 2))
+    // });
     
     // var age = '41';
     
