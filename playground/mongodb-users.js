@@ -19,9 +19,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     
 
     //  db.collection('Users').insertOne({
-    //     name: 'Rafael',
-    //     age: 31,
-    //     location: 'Leeds'
+    //     name: 'Lucas',
+    //     age: 30,
+    //     location: 'Guarulhos'
     // }, (err, result) => {
     //     if (err){
     //         return console.log('Erro porra', err);
@@ -31,7 +31,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //   console.log(JSON.stringify(result.ops, undefined, 2))
     // });
     
-    var age = '41';
+    
     
     // db.collection('Users').findOneAndDelete({
     //     _id: new ObjectID("5ac897d28b9c02143601be0c")
